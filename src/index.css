@@ -1,4 +1,10 @@
 
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 
 
 body.light {
@@ -6,12 +12,11 @@ body.light {
   color: #222;
 }
 
-/* 🌙 Modo oscuro */
+
 body.dark {
   background-color: #121212;
   color: #f5f5f5;
-}
-
+}   
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -21,9 +26,6 @@ body.dark {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  justify-content: center;
-  text-align: center;
 }
 
 a {
@@ -35,13 +37,6 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
 
 h1 {
   font-size: 3.2em;
