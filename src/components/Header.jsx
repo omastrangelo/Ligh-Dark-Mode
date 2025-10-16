@@ -1,14 +1,16 @@
-import {useTheme} from './useTheme'
-const Header =()=>{
+import { useTheme } from "../components/UseTheme";
 
-    const { theme, toggleTheme } = useTheme();
-    
-    return (
-        <header>
-            <h2> Mi App - Tema: {theme}</h2>
-            <button onClick={toggleTheme}>Cambiar Tema</button>
-        </header>
-    )
+function Header() {
+  const { darkMode, toggleTheme } = useTheme();
+
+  return (
+    <header>
+      <h1>{darkMode ? "🌙 Modo Oscuro" : "☀️ Modo Claro"}</h1>
+      <button onClick={toggleTheme}>
+        Cambiar a {darkMode ? "modo claro" : "modo oscuro"}
+      </button>
+    </header>
+  );
 }
 
 export default Header;

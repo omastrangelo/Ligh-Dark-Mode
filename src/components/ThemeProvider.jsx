@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { ThemeContext } from "./ThemeContext";
 
-export const ThemeProvider = () => {
+export const ThemeProvider = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
+
   const toggleTheme = () => setDarkMode(!darkMode);
 
   useEffect(() => {
@@ -9,12 +11,11 @@ export const ThemeProvider = () => {
   }, [darkMode]);
 
   return (
+    <ThemeContext.Provider value={{ darkMode, toggleTheme }}>
       <div className={darkMode ? "app dark" : "app light"}>
-        <h1>{darkMode ? "🌙 Modo Oscuro" : "☀️ Modo Claro"}</h1>
-        <button onClick={toggleTheme}>
-          Cambiar a {darkMode ? "modo claro" : "modo oscuro"}
-        </button>
+        {children}
       </div>
+    </ThemeContext.Provider>
   );
 };
 
